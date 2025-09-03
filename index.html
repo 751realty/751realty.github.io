@@ -15,12 +15,25 @@
       color: #2c3e50;
     }
     header {
-      background: linear-gradient(135deg, #0066cc, #00bfa5);
-      color: #fff;
+      background: #000; /* black background */
+      color: #fff;      /* white text */
       padding: 1rem;
       text-align: center;
       position: relative;
     }
+
+    .header-with-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .header-logo {
+      max-width: 120px; /* adjust size as needed */
+      margin-bottom: 0.5rem;
+    }
+
     .banner img {
       width: 100%;
       max-height: 250px;
@@ -96,7 +109,8 @@
     <img src="images/bc01.jpg" alt="Aerial Briar Chapel Neighborhood Banner">
   </div>
 
-  <header>
+  <header class="header-with-logo">
+    <img src="images/logo.png" alt="751 Realty Logo" class="header-logo">
     <h1>751 Realty</h1>
     <p>Client-focused REALTORS serving Pittsboro, Chapel Hill, Apex, Cary, Raleigh, and Durham</p>
     <nav>
@@ -176,8 +190,7 @@
 
   <footer>
     <p>© 2025 751 Realty LLC | 64 Parkway Drive, Pittsboro, NC</p>
-    <img src="images/logo.png" alt="751 Realty Logo">
-    <img src="images/fheo150.jpg" alt="Fair Housing Logo">
+    <img src="images/fheo150.jpg" alt="Fair Housing Logo" style="width:auto; height:auto;">
   </footer>
 </body>
 </html>

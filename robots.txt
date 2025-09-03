@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://751realty.com/sitemap.xml

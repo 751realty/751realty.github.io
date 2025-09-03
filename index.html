@@ -83,6 +83,26 @@
       margin: 2rem 0;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+
+    .divider-row {
+      display: flex;
+      gap: 1rem;             /* space between images */
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .divider-row .divider {
+      flex: 1;               /* each takes up equal space */
+    }
+
+    .divider-row .divider img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      object-fit: cover;
+    }
+
     footer {
       background: #2c3e50;
       color: #fff;
@@ -177,12 +197,13 @@
       </div>
     </section>
 
-    <div class="divider">
-      <img src="images/house01.jpg" alt="House">
-    </div>
-
-    <div class="divider">
-      <img src="images/swing01.jpg" alt="Swing">
+    <div class="divider-row">
+      <div class="divider">
+        <img src="images/house01.jpg" alt="House">
+      </div>
+      <div class="divider">
+        <img src="images/swing01.jpg" alt="Swing">
+      </div>
     </div>
 
     <section id="contact">

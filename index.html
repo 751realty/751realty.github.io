@@ -14,6 +14,7 @@
       background: #f4f6f8;
       color: #2c3e50;
     }
+
     header {
       background: linear-gradient(to bottom, #2c3e50, #5a6b80); /* dark at top, lighter at bottom */
       color: #fff;
@@ -32,13 +33,13 @@
     }
 
     .header-logo {
-      max-width: 120px; /* adjust size as needed */
+      max-width: 120px;
       margin-bottom: 0.5rem;
     }
 
     header p {
-      font-size: 1.25rem; /* just a little bigger than default */
-      font-weight: 500;  /* optional, gives it some presence */
+      font-size: 1.25rem;
+      font-weight: 500;
       margin-top: 0.5rem;
     }
 
@@ -48,9 +49,11 @@
       object-fit: cover;
       display: block;
     }
+
     nav {
       margin-top: 1rem;
     }
+
     nav a {
       color: #fff;
       margin: 0 12px;
@@ -58,20 +61,25 @@
       font-weight: bold;
       transition: opacity 0.3s;
     }
+
     nav a:hover {
       opacity: 0.8;
     }
+
     .container {
       padding: 1rem;
       max-width: 900px;
       margin: auto;
     }
+
     h1, h2, h3 {
       color: #0066cc;
     }
+
     header h1 {
       color: #fff;
     }
+
     .card {
       background: #fff;
       margin: 1rem 0;
@@ -79,6 +87,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
+
     .divider img {
       width: 100%;
       border-radius: 12px;
@@ -88,13 +97,13 @@
 
     .divider-row {
       display: flex;
-      gap: 1rem;             /* space between images */
+      gap: 1rem;
       justify-content: center;
       margin: 2rem 0;
     }
 
     .divider-row .divider {
-      flex: 1;               /* each takes up equal space */
+      flex: 1;
     }
 
     .divider-row .divider img {
@@ -112,15 +121,18 @@
       padding: 2rem 1rem;
       margin-top: 2rem;
     }
+
     footer img.logo {
       margin-top: 1rem;
       max-height: none;
       width: auto;
       height: auto;
     }
+
     a {
       color: #00bfa5;
     }
+
     iframe {
       width: 100%;
       height: 300px;
@@ -128,15 +140,51 @@
       border-radius: 12px;
       margin-top: 1rem;
     }
+
     .social-icons img {
       width: 128px;
       height: 128px;
       margin: 0 8px;
       vertical-align: middle;
     }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: -70px; /* start off-screen */
+      width: 50px;
+      height: 50px;
+      background: #2c3e50;
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: right 0.4s ease, opacity 0.4s ease, transform 0.2s;
+      z-index: 999;
+    }
+
+    .back-to-top.show {
+      right: 25px;
+      opacity: 0.7;
+    }
+
+    .back-to-top:hover {
+      opacity: 1;
+      transform: translateY(-3px);
+    }
   </style>
 </head>
-<body>
+<body id="top">
 
   <div class="banner">
     <img src="images/bc01.jpg" alt="Aerial Briar Chapel Neighborhood Banner">
@@ -227,5 +275,22 @@
     <p>© 2025 751 Realty LLC</p>
     <img src="images/fheo150.jpg" alt="Fair Housing Logo" class="fheo-logo">
   </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#top" class="back-to-top" aria-label="Back to Top">↑</a>
+
+  <!-- Back to Top Script -->
+  <script>
+    const backToTop = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+  </script>
+
 </body>
 </html>
